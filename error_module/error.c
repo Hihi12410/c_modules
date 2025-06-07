@@ -1,13 +1,6 @@
 #include "error.h"
 
-enum LOGLEVEL 
-{
-    LOGLEVEL_INFO,
-    LOGLEVEL_EXCEPTION,
-    LOGLEVEL_ERROR,
-    LOGLEVEL_MODULE_FATAL,
-    LOGLEVEL_FATAL
-};
+
 
 static char * __log_text[] = {" [INFO] ", "\a [EXCEPTION] ", "\a [ERROR] ", "\a [FATAL MODULE ERROR] ", "\a [FATAL ERROR] "};
 
@@ -22,17 +15,17 @@ static inline void __log(enum LOGLEVEL x, char * str)
     }
 }
 
-static void LOG(enum LOGLEVEL x, char * str) 
+EXPORT void CALL LOG(enum LOGLEVEL x, char * str) 
 {
     __log(x, str);
 }
 
-static void ERROR_FATAL(char * str)
+EXPORT void CALL ERROR_FATAL(char * str)
 {
     __log(LOGLEVEL_FATAL, str);
 }
 
-static void ERROR_MODULE_FATAL(char * str) 
+EXPORT void CALL ERROR_MODULE_FATAL(char * str) 
 {
     __log(LOGLEVEL_MODULE_FATAL, str);
 }
