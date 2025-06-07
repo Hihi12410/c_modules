@@ -1,7 +1,5 @@
 #include "error.h"
 
-
-
 static char * __log_text[] = {" [INFO] ", "\a [EXCEPTION] ", "\a [ERROR] ", "\a [FATAL MODULE ERROR] ", "\a [FATAL ERROR] "};
 
 static inline void __log(enum LOGLEVEL x, char * str) 

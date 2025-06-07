@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#define EXPORT __declspec(dllexport)
-#define CALL __cdecl
+#include "../includes/dllincludes.h"
 
 enum LOGLEVEL 
 {
